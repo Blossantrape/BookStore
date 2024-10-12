@@ -1,0 +1,15 @@
+﻿services:
+  bookstore.api:
+    container_name: bookstore.api
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: bookstore
+      POSTGRES_PASSWORD: bookStorePassword
+      POSTGRES_DB: bookstoredb
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+volumes:
+  postgres-data:
